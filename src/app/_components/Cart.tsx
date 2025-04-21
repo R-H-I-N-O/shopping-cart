@@ -2,6 +2,7 @@ import { MdClose } from "react-icons/md";
 import { useAppContext } from "../_contexts/AppContext";
 import { MdDelete } from "react-icons/md";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -49,7 +50,7 @@ const Cart = () => {
                 className="flex items-center justify-between pb-4"
               >
                 <div className="flex items-center gap-4">
-                  <img
+                  <Image
                     src={item.imgUrl}
                     alt={item.name}
                     className="w-16 h-16 object-cover rounded"
