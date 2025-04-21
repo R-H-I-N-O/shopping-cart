@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div
-      className={`${poppins.className} w-78 lg:w-94 lg:min-h-108 text-[var(--foreground)] bg-[var(--cardbg)] p-4 flex flex-col gap-6 rounded-xl shadow-lg hover:scale-102 ease-in-out backdrop-blur-xl backdrop-saturate-150`}
+      className={`${poppins.className} w-78 lg:w-94 lg:h-128 text-[var(--foreground)] bg-[var(--cardbg)] p-4 flex flex-col gap-6 rounded-xl shadow-lg hover:scale-102 ease-in-out backdrop-blur-xl backdrop-saturate-150`}
     >
       <Image
         src={imgUrl}
@@ -55,16 +55,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {name}
       </p>
 
-      <p className="text-[12px] lg:text-[18px]">{description}</p>
+      <div className="flex flex-col justify-between h-full">
+        <p className="text-[12px] lg:text-[18px]">{description}</p>
 
-      <div className="flex justify-between items-center font-semibold text-[12px] lg:text-[18px]">
-        <p>₹{price}</p>
-        <button
-          onClick={handleaddItemsToCart}
-          className="cursor-pointer rounded-lg p-2 text-white bg-[var(--buttonbg)]"
-        >
-          Add to Cart
-        </button>
+        <div className="flex justify-between items-center font-semibold text-[12px] lg:text-[18px] justify-self-end">
+          <p>₹{price}</p>
+          <button
+            onClick={handleaddItemsToCart}
+            className="cursor-pointer rounded-lg p-2 text-white bg-[var(--buttonbg)]"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );
