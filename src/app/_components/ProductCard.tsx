@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div
-      className={`${poppins.className} w-78 lg:w-94 lg:min-h-108 text-[var(--foreground)] bg-[var(--cardbg)] p-4 flex flex-col gap-6 rounded-xl shadow-lg hover:scale-102 backdrop-blur-xl backdrop-saturate-150`}
+      className={`${poppins.className} w-78 lg:w-94 lg:min-h-108 text-[var(--foreground)] bg-[var(--cardbg)] p-4 flex flex-col gap-6 rounded-xl shadow-lg hover:scale-102 ease-in-out backdrop-blur-xl backdrop-saturate-150`}
     >
       <Image
         src={imgUrl}
