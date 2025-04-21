@@ -51,6 +51,8 @@ const Cart = () => {
               >
                 <div className="flex items-center gap-4">
                   <Image
+                    height={100}
+                    width={100}
                     src={item.imgUrl}
                     alt={item.name}
                     className="w-16 h-16 object-cover rounded"
@@ -67,7 +69,6 @@ const Cart = () => {
                 <div className="flex items-center lg:gap-2 text-[12px] lg:text-[18px] ml-2">
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    disabled={item.quantity <= 1}
                     className="px-2 py-1 border border-[var(--foreground)] rounded-lg"
                   >
                     -
@@ -75,7 +76,6 @@ const Cart = () => {
                   <span className="px-2">{item.quantity}</span>
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    disabled={item.quantity >= 10}
                     className="px-2 py-1 border border-[var(--foreground)] rounded-lg"
                   >
                     +

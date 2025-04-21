@@ -65,14 +65,28 @@ const AppContextProvider: React.FC<AppProviderProps> = ({ children }) => {
   // delete the product
   const removeItemsFromCart = (productId: number) => {
     setCartItems((prev) => prev.filter((item) => item.id !== productId));
+    toast.dismiss();
+    toast.success("Product Removed");
   };
 
   // increase and decrease product quantity
   const updateQuantity = (productId: number, quantity: number) => {
-    if (quantity < 1 || quantity > 10) return;
+    toast.dismiss();
 
-    setCartItems((prev) =>
-      prev.map((item) => (item.id === productId ? { ...item, quantity } : item))
+    if (quantity < 1) {
+      toast.error("Minimum quantity is 1");
+      return;
+    }
+
+    if (quantity > 10) {
+      toast.error("Maximum quantity is 10");
+      return;
+    }
+
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === productId ? { ...item, quantity } : item
+      )
     );
   };
 
